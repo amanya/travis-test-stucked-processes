@@ -6,4 +6,10 @@ jdk:
 before_install: "./bootstrap.sh"
 
 script:
-  - true
+  - "./build.sh"
+  - "git status"
+
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: "./deploy.sh"
